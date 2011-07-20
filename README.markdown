@@ -4,7 +4,7 @@ jQuery plugin. Point at an unordered list (or other element) specify a containme
 
 Demo
 ------
-Check out a very basic demo: http://jquery-draggable-list.github.com/
+Check out a very basic demo: http://paulcampbell.github.com/Jquery-Draggable-List/
 
 Example Usage
 ----
