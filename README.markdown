@@ -53,21 +53,27 @@ The plugin has a bunch of options with default values as follows:
         panelCssClass:'draggableList'
 
 **cursor**
+
 CSS cursor style on hovering over the list
 
 **height**
+
 Numeric-value - pixels The height of the element which will hold the list (it's overflow will be set to hidden)
 
 **width**
+
 Numeric-value - pixels The width of the element which will hold the list
 
 **listPosition**
+
 Value between 0 and 100 : Where abouts the list will be positioned relative to it's container. When 0, the list will appear scrolled right to the top, so the first element will be at the top of the container. When set to 100 the list will be scrolled right to the bottom
 
 **panelCssClass**
+
 Name of the css class that is added to the container item. Used to style the container.
 
 **Dependancies**
+
 Has dependancies on:
 
 jQuery
