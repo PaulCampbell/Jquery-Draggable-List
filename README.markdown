@@ -8,29 +8,38 @@ Check out a very basic demo: http://www.webpangea.co.uk/draggablelistdemo.htm
 
 Example Usage
 ----
-	<script type="text/javascript" src="http://jqueryui.com/latest/jquery-1.3.2.js"></script>
-	<script type="text/javascript" src="http://jqueryui.com/latest/ui/ui.core.js"></script>
-	<script type="text/javascript" src="http://jqueryui.com/latest/ui/ui.draggable.js"></script>
-	<script type="text/javascript" src="jquery.draggableList.js"></script>
+	<html>
+  		<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="jquery.draggableList.js"></script>
 
-  	<script type="text/javascript">
-      $(document).ready(function() {
-          $('.myList').draggableList({height:150, listPosition:0});
-      });
-  	</script>
-    
-           
-   	<ul class="myList">
-     <li>1</li>
-     <li>2</li>
-     <li>3</li>
-     <li>4</li>
-     <li>5</li>
-     <li>6</li>
-     <li>7</li>
-     <li>8</li>
-     <li>9</li>
-   	</ul>
+  		<script type="text/javascript">
+      		$(document).ready(function() {
+          		$('.myList').draggableList({height:150, listPosition:0});
+      		});
+  		</script>
+  	
+  		<style>
+  			.draggableList {border:solid 1px black;}
+  			.myList li { height:30px; }
+  		</style>
+  	
+  	</head>
+ 	<body>    
+   		<ul class="myList">
+     		<li>1</li>
+     		<li>2</li>
+     		<li>3</li>
+     		<li>4</li>
+     		<li>5</li>
+     		<li>6</li>
+     		<li>7</li>
+     		<li>8</li>
+     		<li>9</li>
+   		</ul>
+  	</body>
+	</html>
    
 
 Options
