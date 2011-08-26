@@ -1,7 +1,11 @@
 <html>
   <head>
+  <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="css/prettify.css" rel="stylesheet"> 
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<script type="text/javascript" src="application.js"></script>
 	<script type="text/javascript" src="jquery.draggableList.js"></script>
 
   	<script type="text/javascript">
@@ -12,12 +16,58 @@
   	
   	<style>
   		.draggableList {border:solid 1px black;}
+		.myList { margin:0 20px; }
   		.myList li { height:30px; }
+		pre, code {
+			font: 12px 'Bitstream Vera Sans Mono','Courier',monospace;
+		}
+		section h1 {padding-top:45;}
+		footer { text-align:center }
   	</style>
-  	
+	
+	<meta name="description" content="">
+    <meta name="author" content="@paulcampbell_">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <!--  
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  	-->
  </head>
  <body>
-    <h1>JQuery DraggableList demo</h1>  
+ 
+ <a href="http://github.com/PaulCampbell/Jquery-Draggable-List"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:10001;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+ 
+   <div class="topbar">
+      <div class="fill">
+        <div class="container fixed">
+          <h3><a href="#">Jquery Draggable List</a></h3>
+          <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#usage">Example usage</a></li>
+			<li><a href="#options">Options</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+   <div class="hero-unit">
+        <h1>Draggable List</h1>
+        <p>jQuery plugin. Point at an unordered list (or other element) specify a containment size and the list will become draggable. Drag the list up and down to scroll its contents.</p>
+        <p><a class="btn primary large" href="#demo">Learn more &raquo;</a></p>
+      </div>
+	  
+	 <section id="demo">
+	 <div class="page-header"> 
+    <h1>Demo <small>seeing what it does</small></h1>  
+	</div>
     <p>Click the list below and drag it up and down. Marvel at its draggability.</p>
    	<ul class="myList">
      <li>1</li>
@@ -29,11 +79,98 @@
      <li>7</li>
      <li>8</li>
      <li>9</li>
+	 <li>10</li>
    	</ul>
+   	</section>
+	
+<section id="usage">	
+<div class="page-header"> 
+<h1>Example Usage <small>making it work</small></h1> 
+ </div>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="jquery.draggableList.js"&gt;&lt;/script&gt;
+ 
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function() {
+            $('.myList').draggableList({height:150, listPosition:0});
+        });
+    &lt;/script&gt;
+ 
+    &lt;style&gt;
+        .draggableList {border:solid 1px black;}
+        .myList li { height:30px; }
+    &lt;/style&gt;
+ 
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;ul class="myList"&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+        &lt;li&gt;5&lt;/li&gt;
+        &lt;li&gt;6&lt;/li&gt;
+        &lt;li&gt;7&lt;/li&gt;
+        &lt;li&gt;8&lt;/li&gt;
+        &lt;li&gt;9&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+ </section>
+ <section id="options">
+ <div class="page-header"> 
+<h1>Options <small>making it look different</small></h1> 
+ </div>
+<p>The plugin has a bunch of options with default values as follows:</p> 
+ 
+<pre><code>    cursor: 'n-resize',
+    height: '150',
+    width: '100',
+    listPosition: '0',
+    panelCssClass:'draggableList'
+</code></pre> 
+ 
+<p><strong>cursor</strong></p> 
+ 
+<p>CSS cursor style on hovering over the list</p> 
+ 
+<p><strong>height</strong></p> 
+ 
+<p>Numeric-value - pixels The height of the element which will hold the list (it's overflow will be set to hidden)</p> 
+ 
+<p><strong>width</strong></p> 
+ 
+<p>Numeric-value - pixels The width of the element which will hold the list</p> 
+ 
+<p><strong>listPosition</strong></p> 
+ 
+<p>Value between 0 and 100 : Where abouts the list will be positioned relative to it's container. When 0, the list will appear scrolled right to the top, so the first element will be at the top of the container. When set to 100 the list will be scrolled right to the bottom</p> 
+ 
+<p><strong>panelCssClass</strong></p> 
+ 
+<p>Name of the css class that is added to the container item. Used to style the container.</p> 
+ 
+<p><strong>Dependancies</strong></p> 
+ 
+<p>Has dependancies on:</p> 
+ 
+<p>jQuery
+ui.core
+ui.draggable</p></div></div> 
+    </div> 
+  </div> 
+  <br style="clear:both;"> 
+ </section>
    	
-   	<p>Check the instructions and download the file:
-   	<a href="https://github.com/PaulCampbell/Jquery-Draggable-List">https://github.com/PaulCampbell/Jquery-Draggable-List</a>
-   	</p>
-   	<p>made by <a href="http://twitter.com/#!/paulcampbell_">@paulcampbell_</a></p>
+	 <footer>
+       <p>made by <a href="http://twitter.com/#!/paulcampbell_">@paulcampbell_</a></p>
+      </footer>
+
+    </div> 
+	
   </body>
 </html>
