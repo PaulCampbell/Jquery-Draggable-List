@@ -1,7 +1,7 @@
 jquery.draggableList
 ======================
 jQuery plugin. Point at an unordered list (or other element) specify a containment size and the list will become draggable. Drag the list up and down to scroll its contents.
-
+  
 Demo
 ------
 Check out a very basic demo: http://paulcampbell.github.com/Jquery-Draggable-List/
