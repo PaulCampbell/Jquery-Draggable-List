@@ -1,17 +1,12 @@
-// plugin definition
+
 $.fn.draggableList = function(options) {
-	// Extend our default options with those provided.
-	// Note that the first arg to extend is an empty object -
-	// this is to keep from overriding our "defaults" object.
 	var opts = $.extend({}, $.fn.draggableList.defaults, options);
-	// Our plugin implementation code goes here.
 	this.each(function() {
 		var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
 		CreateContainerDiv($(this), o);
 	});
 }
 
-// plugin defaults - added as a property on our plugin function
 $.fn.draggableList.defaults = {
 	cursor: 'n-resize',
 	height: '150',
